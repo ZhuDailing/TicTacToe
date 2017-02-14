@@ -41,7 +41,7 @@ module game {
     // I've added this code for a future where all browsers support serviceWorker (so we can deprecate appCache!)
     if (!window.applicationCache && 'serviceWorker' in navigator) {
       let n: any = navigator;
-      log.log('Calling serviceWorker.register');
+      log.log('Calling serviceWorker.register: oh hello jutalin!');
       n.serviceWorker.register('service-worker.js').then(function(registration: any) {
         log.log('ServiceWorker registration successful with scope: ',    registration.scope);
       }).catch(function(err: any) {
@@ -55,7 +55,7 @@ module game {
   }
 
   export function communityUI(communityUI: ICommunityUI) {
-    log.info("Game got communityUI:", communityUI);
+    log.info("Game got communityUI:hello jutalin", communityUI);
     // If only proposals changed, then do NOT call updateUI. Then update proposals.
     let nextUpdateUI: IUpdateUI = {
         playersInfo: [],
